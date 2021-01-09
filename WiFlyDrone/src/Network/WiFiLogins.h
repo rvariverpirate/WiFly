@@ -5,4 +5,4 @@ struct WiFiLogin{
 
 
 
-struct WiFiLogin MyNetwork = {"YourWiFiNetwork", "YourWiFiPassword"};
+struct WiFiLogin MyNetwork = {"YourWiFiNetwork_gitignoreTest", "YourWiFiPassword"};
