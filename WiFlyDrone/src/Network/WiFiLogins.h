@@ -3,6 +3,4 @@ struct WiFiLogin{
     const char* password;
   };
 
-
-
-struct WiFiLogin MyNetwork = {"YourWiFiNetwork_gitignoreTest", "YourWiFiPassword"};
+struct WiFiLogin MyNetwork = {"YourWiFiNetwork", "YourWiFiPassword"};
