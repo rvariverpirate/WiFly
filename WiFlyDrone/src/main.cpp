@@ -1,15 +1,24 @@
+#include <Arduino.h>
 #include "esp_camera.h"
 #include "Network/WiFiLogins.h"
 #include <WiFi.h>
 
 // Select camera model
 #define CAMERA_MODEL_AI_THINKER // Has PSRAM
-#include "camera_pins.h"
+#include "Camera/camera_pins.h"
+
+// Add IMU
+#include "Sensors/IMU.h"
+
+// Include ROS and Messages
+#include <ros.h>
+#include <std_msgs/String.h>
 
 // WiFi Credentials from Network/WiFiLogins.h
 const char* ssid = MyNetwork.ssid;
 const char* password = MyNetwork.password;
 
+// In C++ All functions must be defined before called
 void startCameraServer();
 
 void setup() {
@@ -17,6 +26,7 @@ void setup() {
   Serial.setDebugOutput(true);
   Serial.println();
 
+  // Configure Camera
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_0;
   config.ledc_timer = LEDC_TIMER_0;
