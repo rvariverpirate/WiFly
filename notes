@@ -1,0 +1,4 @@
+Git
+Stop tracking file in git, but keep it in the repo:
+git update-index --skip-worktree FILENAME
+
