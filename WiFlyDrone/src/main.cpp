@@ -15,14 +15,18 @@
 const char* ssid = MyNetwork.ssid;
 const char* password = MyNetwork.password;
 
-
 void setup(){
+
+  // Setup Serial Communication at 115200 Baud Rate
+  Serial.begin(115200);
+  Serial.setDebugOutput(true);
+  Serial.println();
 
   // Setup Web Cam
   setupCamera();
 
   // Setup IMU
-  // setupIMU();
+  setupIMU();
 
   // Setup WiFi Connection
   WiFi.begin(ssid, password);

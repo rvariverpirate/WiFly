@@ -9,8 +9,6 @@
 void startCameraServer();
 
 void setupCamera() {
-  Serial.begin(115200);
-  Serial.setDebugOutput(true);
   Serial.println();
 
   // Configure Camera
