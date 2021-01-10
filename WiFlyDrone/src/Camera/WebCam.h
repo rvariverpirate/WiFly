@@ -9,7 +9,7 @@
 void startCameraServer();
 
 void setupCamera() {
-  Serial.println();
+  Serial.println("Setting up Web Camera...");
 
   // Configure Camera
   camera_config_t config;
