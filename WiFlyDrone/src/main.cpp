@@ -8,8 +8,7 @@
 #include "Sensors/IMU.h"
 
 // Include ROS and Messages
-#include <ros.h>
-#include <std_msgs/String.h>
+#include "ROS/ROS_Node.h"
 
 // WiFi Credentials from Network/WiFiLogins.h
 const char* ssid = MyNetwork.ssid;
@@ -38,17 +37,22 @@ void setup(){
   Serial.println("");
   Serial.println("WiFi connected");
 
+  // Setup ROS
+  setupROS();
+
   // Start the Camera Server
   startCameraServer();
   Serial.print("Camera Ready! Use 'http://");
   Serial.print(WiFi.localIP());
   Serial.println("' to connect");
-
-
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
   delay(500);
   printIMU();
+
+  // Test ROS
+  testROS();
+
 }
