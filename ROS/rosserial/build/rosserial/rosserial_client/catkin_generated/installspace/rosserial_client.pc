@@ -1,0 +1,8 @@
+prefix=/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/install
+
+Name: rosserial_client
+Description: Description of rosserial_client
+Version: 0.8.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

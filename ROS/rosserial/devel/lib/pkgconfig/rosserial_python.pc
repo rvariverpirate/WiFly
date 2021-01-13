@@ -1,0 +1,8 @@
+prefix=/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel
+
+Name: rosserial_python
+Description: Description of rosserial_python
+Version: 0.8.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
