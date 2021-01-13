@@ -350,6 +350,12 @@ catkin_DIR:PATH=/opt/ros/melodic/share/catkin/cmake
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/melodic/share/cpp_common/cmake
 
+//Value Computed by CMake
+drone_core_BINARY_DIR:STATIC=/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/build/rosserial/drone_core
+
+//Value Computed by CMake
+drone_core_SOURCE_DIR:STATIC=/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/src/rosserial/drone_core
+
 //The directory containing a CMake configuration file for gencpp.
 gencpp_DIR:PATH=/opt/ros/melodic/share/gencpp/cmake
 
@@ -431,6 +437,12 @@ message_runtime_DIR:PATH=/opt/ros/melodic/share/message_runtime/cmake
 
 //The directory containing a CMake configuration file for nav_msgs.
 nav_msgs_DIR:PATH=/opt/ros/melodic/share/nav_msgs/cmake
+
+//Value Computed by CMake
+ps3_BINARY_DIR:STATIC=/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/build/rosserial/ps3
+
+//Value Computed by CMake
+ps3_SOURCE_DIR:STATIC=/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/src/rosserial/ps3
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/melodic/share/rosconsole/cmake
@@ -560,6 +572,12 @@ std_msgs_DIR:PATH=/opt/ros/melodic/share/std_msgs/cmake
 
 //The directory containing a CMake configuration file for topic_tools.
 topic_tools_DIR:PATH=/opt/ros/melodic/share/topic_tools/cmake
+
+//Value Computed by CMake
+view3D_BINARY_DIR:STATIC=/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/build/rosserial/view3D
+
+//Value Computed by CMake
+view3D_SOURCE_DIR:STATIC=/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/src/rosserial/view3D
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/melodic/share/xmlrpcpp/cmake
@@ -702,7 +720,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=18
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=21
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

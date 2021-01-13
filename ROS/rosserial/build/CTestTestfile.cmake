@@ -5,6 +5,8 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
+subdirs("rosserial/drone_core")
+subdirs("rosserial/ps3")
 subdirs("rosserial/rosserial")
 subdirs("rosserial/rosserial_arduino")
 subdirs("rosserial/rosserial_mbed")
@@ -15,6 +17,7 @@ subdirs("rosserial/rosserial_vex_cortex")
 subdirs("rosserial/rosserial_vex_v5")
 subdirs("rosserial/rosserial_xbee")
 subdirs("rosserial/rosserial_client")
+subdirs("rosserial/view3D")
 subdirs("rosserial/rosserial_server")
 subdirs("rosserial/rosserial_embeddedlinux")
 subdirs("rosserial/rosserial_test")

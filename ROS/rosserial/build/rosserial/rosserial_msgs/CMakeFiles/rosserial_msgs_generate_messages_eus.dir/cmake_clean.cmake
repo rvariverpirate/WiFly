@@ -1,8 +1,12 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rosserial_msgs_generate_messages_eus"
   "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel/share/roseus/ros/rosserial_msgs/msg/Log.l"
+  "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel/share/roseus/ros/rosserial_msgs/msg/myTest.l"
+  "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel/share/roseus/ros/rosserial_msgs/msg/RPY.l"
   "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel/share/roseus/ros/rosserial_msgs/msg/TopicInfo.l"
+  "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel/share/roseus/ros/rosserial_msgs/srv/RequestMessageInfo.l"
   "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel/share/roseus/ros/rosserial_msgs/srv/RequestParam.l"
+  "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel/share/roseus/ros/rosserial_msgs/srv/RequestServiceInfo.l"
   "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel/share/roseus/ros/rosserial_msgs/manifest.l"
 )
 

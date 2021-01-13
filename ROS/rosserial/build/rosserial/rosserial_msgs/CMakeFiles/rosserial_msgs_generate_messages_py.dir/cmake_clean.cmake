@@ -1,8 +1,12 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rosserial_msgs_generate_messages_py"
   "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel/lib/python2.7/dist-packages/rosserial_msgs/msg/_Log.py"
+  "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel/lib/python2.7/dist-packages/rosserial_msgs/msg/_myTest.py"
+  "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel/lib/python2.7/dist-packages/rosserial_msgs/msg/_RPY.py"
   "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel/lib/python2.7/dist-packages/rosserial_msgs/msg/_TopicInfo.py"
+  "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel/lib/python2.7/dist-packages/rosserial_msgs/srv/_RequestMessageInfo.py"
   "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel/lib/python2.7/dist-packages/rosserial_msgs/srv/_RequestParam.py"
+  "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel/lib/python2.7/dist-packages/rosserial_msgs/srv/_RequestServiceInfo.py"
   "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel/lib/python2.7/dist-packages/rosserial_msgs/msg/__init__.py"
   "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel/lib/python2.7/dist-packages/rosserial_msgs/srv/__init__.py"
 )

@@ -41,11 +41,17 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rosserial_msgs/msg" TYPE FILE FILES
     "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/src/rosserial/rosserial_msgs/msg/Log.msg"
     "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/src/rosserial/rosserial_msgs/msg/TopicInfo.msg"
+    "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/src/rosserial/rosserial_msgs/msg/myTest.msg"
+    "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/src/rosserial/rosserial_msgs/msg/RPY.msg"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rosserial_msgs/srv" TYPE FILE FILES "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/src/rosserial/rosserial_msgs/srv/RequestParam.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rosserial_msgs/srv" TYPE FILE FILES
+    "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/src/rosserial/rosserial_msgs/srv/RequestMessageInfo.srv"
+    "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/src/rosserial/rosserial_msgs/srv/RequestParam.srv"
+    "/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/src/rosserial/rosserial_msgs/srv/RequestServiceInfo.srv"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

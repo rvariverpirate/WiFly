@@ -1,0 +1,8 @@
+prefix=/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/install
+
+Name: ps3
+Description: Description of ps3
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
