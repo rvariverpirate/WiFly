@@ -22,7 +22,7 @@ void setup(){
   Serial.println();
 
   // Setup Web Cam
-  setupCamera();
+  // setupCamera();
 
   // Setup IMU
   setupIMU();
@@ -41,7 +41,7 @@ void setup(){
   setupROS();
 
   // Start the Camera Server
-  startCameraServer();
+  // startCameraServer();
   Serial.print("Camera Ready! Use 'http://");
   Serial.print(WiFi.localIP());
   Serial.println("' to connect");
@@ -54,5 +54,4 @@ void loop() {
 
   // Test ROS
   testROS();
-
 }

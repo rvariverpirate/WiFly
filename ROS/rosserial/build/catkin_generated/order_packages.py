@@ -2,4 +2,4 @@
 source_root_dir = '/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/src'
 whitelisted_packages = ''.split(';') if '' != '' else []
 blacklisted_packages = ''.split(';') if '' != '' else []
-underlay_workspaces = '/opt/ros/melodic'.split(';') if '/opt/ros/melodic' != '' else []
+underlay_workspaces = '/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel;/opt/ros/melodic'.split(';') if '/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel;/opt/ros/melodic' != '' else []

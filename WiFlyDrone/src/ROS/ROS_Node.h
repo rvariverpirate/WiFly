@@ -1,5 +1,7 @@
 #include <ros.h>
 #include <std_msgs/String.h>
+#include <sensor_msgs/Imu.h>
+#include <rosserial_msgs/RPY.h>
 
 // To use the TCP version of rosserial_arduino
 #define ROSSERIAL_ARDUINO_TCP

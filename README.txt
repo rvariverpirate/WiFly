@@ -15,3 +15,6 @@ WSL Port Forwarding
 https://dev.to/vishnumohanrk/wsl-port-forwarding-2e22
 netsh interface portproxy reset
 netsh interface portproxy show v4tov4
+
+Stream Server Test:
+http://192.168.1.244:81/stream
