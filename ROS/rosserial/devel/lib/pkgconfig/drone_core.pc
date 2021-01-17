@@ -1,8 +1,0 @@
-prefix=/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/devel
-
-Name: drone_core
-Description: Description of drone_core
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

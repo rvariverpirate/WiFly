@@ -7,7 +7,7 @@
 #define ROSSERIAL_ARDUINO_TCP
 
 // Set the rosserial socket server IP address
-IPAddress server(192, 168, 1, 215); // Linux Box: 167;
+IPAddress server(192, 168, 1, 167); // Linux Box: 167, DeadBox: 215
 
 // Set the rosserial socket server port
 const uint16_t serverPort = 11411;

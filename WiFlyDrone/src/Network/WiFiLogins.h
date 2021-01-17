@@ -3,4 +3,4 @@ struct WiFiLogin{
     const char* password;
   };
 
-struct WiFiLogin MyNetwork = {"YourWiFiNetwork", "YourWiFiPassword"};
+struct WiFiLogin MyNetwork = {"YourWiFiNetwork", "YourPassword"};

@@ -1,0 +1,8 @@
+prefix=/home/tripp/Workspaces/src/rosserial/devel
+
+Name: imu_msgs
+Description: Description of imu_msgs
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/tripp/Workspaces/src/rosserial/devel/lib 
+Requires: 

@@ -1,8 +1,0 @@
-prefix=/mnt/c/Users/jcann/Desktop/Projects/WiFly/ROS/rosserial/install
-
-Name: rosserial_msgs
-Description: Description of rosserial_msgs
-Version: 0.8.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: message_runtime

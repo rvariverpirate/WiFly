@@ -1,0 +1,8 @@
+prefix=/home/tripp/Workspaces/src/rosserial/devel
+
+Name: rosserial_test
+Description: Description of rosserial_test
+Version: 0.8.0
+Cflags: 
+Libs: -L/home/tripp/Workspaces/src/rosserial/devel/lib 
+Requires: rosserial_msgs std_msgs

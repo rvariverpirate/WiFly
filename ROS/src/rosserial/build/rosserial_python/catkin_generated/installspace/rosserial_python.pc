@@ -1,0 +1,8 @@
+prefix=/home/tripp/Workspaces/src/rosserial/install
+
+Name: rosserial_python
+Description: Description of rosserial_python
+Version: 0.8.0
+Cflags: 
+Libs: -L/home/tripp/Workspaces/src/rosserial/install/lib 
+Requires: 
