@@ -1,0 +1,8 @@
+prefix=/home/tripp/Desktop/WiFly/ROS/install
+
+Name: rosserial_arduino
+Description: Description of rosserial_arduino
+Version: 0.8.0
+Cflags: -I/home/tripp/Desktop/WiFly/ROS/install/include
+Libs: -L/home/tripp/Desktop/WiFly/ROS/install/lib 
+Requires: message_runtime

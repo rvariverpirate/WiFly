@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="ps3" type="joystick.py" name="joystick"/>
+  <node pkg="ps3" type="joySubPub.py" name="joyPubSub" />
+</launch>

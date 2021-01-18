@@ -1,0 +1,8 @@
+prefix=/home/tripp/Desktop/WiFly/ROS/install
+
+Name: rosserial_test
+Description: Description of rosserial_test
+Version: 0.8.0
+Cflags: 
+Libs: -L/home/tripp/Desktop/WiFly/ROS/install/lib 
+Requires: rosserial_msgs std_msgs

@@ -1,0 +1,8 @@
+prefix=/home/tripp/Desktop/WiFly/ROS/devel
+
+Name: rosserial_tivac
+Description: Description of rosserial_tivac
+Version: 0.8.0
+Cflags: 
+Libs: -L/home/tripp/Desktop/WiFly/ROS/devel/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/tripp/Desktop/WiFly/ROS/install
+
+Name: rosserial_client
+Description: Description of rosserial_client
+Version: 0.8.0
+Cflags: 
+Libs: -L/home/tripp/Desktop/WiFly/ROS/install/lib 
+Requires: 

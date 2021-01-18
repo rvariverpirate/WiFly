@@ -1,0 +1,8 @@
+prefix=/home/tripp/Desktop/WiFly/ROS/install
+
+Name: ps3
+Description: Description of ps3
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/tripp/Desktop/WiFly/ROS/install/lib 
+Requires: 

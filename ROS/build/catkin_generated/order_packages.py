@@ -1,0 +1,5 @@
+# generated from catkin/cmake/template/order_packages.context.py.in
+source_root_dir = "/home/tripp/Desktop/WiFly/ROS/src"
+whitelisted_packages = "".split(';') if "" != "" else []
+blacklisted_packages = "".split(';') if "" != "" else []
+underlay_workspaces = "/home/tripp/Desktop/WiFly/ROS/src/rosserial/devel;/home/tripp/Workspaces/src/rosserial/devel;/opt/ros/melodic".split(';') if "/home/tripp/Desktop/WiFly/ROS/src/rosserial/devel;/home/tripp/Workspaces/src/rosserial/devel;/opt/ros/melodic" != "" else []
