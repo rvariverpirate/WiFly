@@ -1,8 +1,0 @@
-prefix=/home/tripp/Desktop/WiFly/ROS/devel
-
-Name: drone_core
-Description: Description of drone_core
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/tripp/Desktop/WiFly/ROS/devel/lib 
-Requires: 
