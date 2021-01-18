@@ -50,7 +50,29 @@ void setup(){
 void loop() {
   // put your main code here, to run repeatedly:
   delay(500);
-  printIMU();
+  // printIMU();
+
+
+  double * IMU_data = getIMU_vals();
+  Serial.print("IMU roll: ");
+  Serial.println(String(IMU_data[0], DEC));
+  Serial.print("IMU pitch: ");
+  Serial.println(String(IMU_data[1], DEC));
+  Serial.print("IMU yaw: ");
+  Serial.println(String(IMU_data[2], DEC));
+
+  /* // Publish Debug Message
+  chatter.publish( &str_msg );
+
+  // Create Roll Pitch Yaw Message
+  rpy_msg.header.frame_id = "/world";
+  rpy_msg.header.stamp = nh.now();// timestamp
+  rpy_msg.roll = IMU_data[0];// TODO: I have no idea if these are
+  rpy_msg.pitch = IMU_data[1];// in the right locations
+  rpy_msg.yaw = IMU_data[2];// Too lazy to check right now
+
+  // Publish Roll, Pitch, Yaw message
+  rpy.publish(&rpy_msg);*/
 
   // Test ROS
   testROS();

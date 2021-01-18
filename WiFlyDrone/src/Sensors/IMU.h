@@ -39,6 +39,42 @@ void setupIMU(){
     IMU.setSrd(19);
 }
 
+// Convert Acceleration to Roll Pitch Yaw
+double* getRollPitchAccel(int16_t x, int16_t y, int16_t z, double *rp_tmp){
+   double X = float(x);
+   double Y = float(y);
+   double Z = float(z);
+   double roll_a = atan2(Y, Z);
+   //Serial.println(roll_a);
+   double pitch_a = atan2((-X), sqrt(Y*Y +Z*Z));
+   //Serial.println(pitch_a);
+   rp_tmp[0] = roll_a;
+   rp_tmp[1] = pitch_a;
+   return rp_tmp;
+}
+
+double * getIMU_vals(){
+   // Get the Roll and Pitch
+   double rp_tmp[5];
+   double * rollPitch_accel = getRollPitchAccel(IMU.getAccelX_mss(), IMU.getAccelY_mss(), IMU.getAccelZ_mss(), rp_tmp);
+   double roll = rollPitch_accel[0];
+   double pitch = rollPitch_accel[1];
+
+   // Get the Yaw from Magnetometer
+   double Yh = (IMU.getMagY_uT() * cos(roll)) - (IMU.getMagZ_uT() * sin(roll));
+   double Xh = (IMU.getMagX_uT() * cos(pitch))+(IMU.getMagY_uT() * sin(roll)*sin(pitch)) + (IMU.getMagZ_uT() * cos(roll) * sin(pitch));
+   double yaw = atan2(Yh, Xh);
+
+   // --- Create Container for Data ---
+   double static IMU_data[10];
+
+   IMU_data[0] = roll;//rollPitch_accel[0];
+   IMU_data[1] = pitch;//rollPitch_accel[1];
+   IMU_data[2] = yaw;
+  
+   return IMU_data;
+}
+
 void printIMU(){
     // Read IMU Data
     IMU.readSensor();
