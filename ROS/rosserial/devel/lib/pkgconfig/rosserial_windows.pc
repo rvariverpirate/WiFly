@@ -1,8 +1,8 @@
-prefix=/home/tripp/Workspaces/src/rosserial/devel
+prefix=/home/tripp/Desktop/WiFly/ROS/rosserial/devel
 
 Name: rosserial_windows
 Description: Description of rosserial_windows
 Version: 0.8.0
 Cflags: 
-Libs: -L/home/tripp/Workspaces/src/rosserial/devel/lib 
+Libs: -L/home/tripp/Desktop/WiFly/ROS/rosserial/devel/lib 
 Requires: 

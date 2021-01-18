@@ -1,0 +1,8 @@
+prefix=/home/tripp/Desktop/WiFly/ROS/rosserial/install
+
+Name: view3D
+Description: Description of view3D
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/tripp/Desktop/WiFly/ROS/rosserial/install/lib 
+Requires: 

@@ -12,16 +12,16 @@ try:
     from catkin.environment_cache import generate_environment_script
 except ImportError:
     # search for catkin package in all workspaces and prepend to path
-    for workspace in "/home/tripp/Workspaces/src/rosserial/devel;/opt/ros/melodic".split(';'):
+    for workspace in "/home/tripp/Desktop/WiFly/ROS/rosserial/devel;/home/tripp/Workspaces/src/rosserial/devel;/opt/ros/melodic".split(';'):
         python_path = os.path.join(workspace, 'lib/python2.7/dist-packages')
         if os.path.isdir(os.path.join(python_path, 'catkin')):
             sys.path.insert(0, python_path)
             break
     from catkin.environment_cache import generate_environment_script
 
-code = generate_environment_script('/home/tripp/Workspaces/src/rosserial/devel/env.sh')
+code = generate_environment_script('/home/tripp/Desktop/WiFly/ROS/rosserial/devel/env.sh')
 
-output_filename = '/home/tripp/Workspaces/src/rosserial/build/catkin_generated/setup_cached.sh'
+output_filename = '/home/tripp/Desktop/WiFly/ROS/rosserial/build/catkin_generated/setup_cached.sh'
 with open(output_filename, 'w') as f:
     #print('Generate script for cached setup "%s"' % output_filename)
     f.write('\n'.join(code))

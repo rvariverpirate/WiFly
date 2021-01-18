@@ -7,4 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/tripp/Workspaces/src/rosserial/build"
+export PWD="/home/tripp/Desktop/WiFly/ROS/rosserial/build"

@@ -1,8 +1,8 @@
-prefix=/home/tripp/Workspaces/src/rosserial/install
+prefix=/home/tripp/Desktop/WiFly/ROS/rosserial/install
 
 Name: imu_msgs
 Description: Description of imu_msgs
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/tripp/Workspaces/src/rosserial/install/lib 
+Libs: -L/home/tripp/Desktop/WiFly/ROS/rosserial/install/lib 
 Requires: 

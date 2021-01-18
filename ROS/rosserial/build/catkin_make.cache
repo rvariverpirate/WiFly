@@ -1,2 +1,2 @@
-imu_msgs:rosserial:rosserial_arduino:rosserial_client:rosserial_embeddedlinux:rosserial_mbed:rosserial_msgs:rosserial_python:rosserial_server:rosserial_test:rosserial_tivac:rosserial_vex_cortex:rosserial_vex_v5:rosserial_windows:rosserial_xbee
--DCATKIN_DEVEL_PREFIX=/home/tripp/Workspaces/src/rosserial/devel -DCMAKE_INSTALL_PREFIX=/home/tripp/Workspaces/src/rosserial/install -G Unix Makefiles
+drone_core:imu_msgs:ps3:rosserial:rosserial_arduino:rosserial_client:rosserial_embeddedlinux:rosserial_mbed:rosserial_msgs:rosserial_python:rosserial_server:rosserial_test:rosserial_tivac:rosserial_vex_cortex:rosserial_vex_v5:rosserial_windows:rosserial_xbee:view3D
+-DCATKIN_DEVEL_PREFIX=/home/tripp/Desktop/WiFly/ROS/rosserial/devel -DCMAKE_INSTALL_PREFIX=/home/tripp/Desktop/WiFly/ROS/rosserial/install -G Unix Makefiles

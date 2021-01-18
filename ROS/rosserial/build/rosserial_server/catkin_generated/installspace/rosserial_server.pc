@@ -1,8 +1,8 @@
-prefix=/home/tripp/Workspaces/src/rosserial/install
+prefix=/home/tripp/Desktop/WiFly/ROS/rosserial/install
 
 Name: rosserial_server
 Description: Description of rosserial_server
 Version: 0.8.0
-Cflags: -I/home/tripp/Workspaces/src/rosserial/install/include
-Libs: -L/home/tripp/Workspaces/src/rosserial/install/lib 
+Cflags: -I/home/tripp/Desktop/WiFly/ROS/rosserial/install/include
+Libs: -L/home/tripp/Desktop/WiFly/ROS/rosserial/install/lib 
 Requires: roscpp rosserial_msgs std_msgs topic_tools

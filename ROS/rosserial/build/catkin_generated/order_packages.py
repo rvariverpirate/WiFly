@@ -1,5 +1,5 @@
 # generated from catkin/cmake/template/order_packages.context.py.in
-source_root_dir = "/home/tripp/Workspaces/src/rosserial/src"
+source_root_dir = "/home/tripp/Desktop/WiFly/ROS/rosserial/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/tripp/Workspaces/src/rosserial/devel;/opt/ros/melodic".split(';') if "/home/tripp/Workspaces/src/rosserial/devel;/opt/ros/melodic" != "" else []
+underlay_workspaces = "/home/tripp/Desktop/WiFly/ROS/rosserial/devel;/home/tripp/Workspaces/src/rosserial/devel;/opt/ros/melodic".split(';') if "/home/tripp/Desktop/WiFly/ROS/rosserial/devel;/home/tripp/Workspaces/src/rosserial/devel;/opt/ros/melodic" != "" else []
