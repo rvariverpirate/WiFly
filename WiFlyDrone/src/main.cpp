@@ -49,10 +49,10 @@ void setup(){
 
 void loop() {
   // put your main code here, to run repeatedly:
-  delay(500);
-  // printIMU();
-
-
+  delay(100);
+  Serial.println("IMU RAW DATA: ");
+  printIMU();
+  
   double * IMU_data = getIMU_vals();
   Serial.print("IMU roll: ");
   Serial.println(String(IMU_data[0], DEC));
@@ -61,7 +61,7 @@ void loop() {
   Serial.print("IMU yaw: ");
   Serial.println(String(IMU_data[2], DEC));
 
-  /* // Publish Debug Message
+  // Publish Debug Message
   chatter.publish( &str_msg );
 
   // Create Roll Pitch Yaw Message
@@ -72,7 +72,7 @@ void loop() {
   rpy_msg.yaw = IMU_data[2];// Too lazy to check right now
 
   // Publish Roll, Pitch, Yaw message
-  rpy.publish(&rpy_msg);*/
+  rpy.publish(&rpy_msg);
 
   // Test ROS
   testROS();
