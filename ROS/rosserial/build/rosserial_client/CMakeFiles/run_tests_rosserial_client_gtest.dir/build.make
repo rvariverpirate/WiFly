@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tripp/Workspaces/src/rosserial/src
+CMAKE_SOURCE_DIR = /home/tripp/Desktop/WiFly/ROS/rosserial/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tripp/Workspaces/src/rosserial/build
+CMAKE_BINARY_DIR = /home/tripp/Desktop/WiFly/ROS/rosserial/build
 
 # Utility rule file for run_tests_rosserial_client_gtest.
 
@@ -63,10 +63,10 @@ rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest.dir/build: run_test
 .PHONY : rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest.dir/build
 
 rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest.dir/clean:
-	cd /home/tripp/Workspaces/src/rosserial/build/rosserial_client && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_rosserial_client_gtest.dir/cmake_clean.cmake
+	cd /home/tripp/Desktop/WiFly/ROS/rosserial/build/rosserial_client && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_rosserial_client_gtest.dir/cmake_clean.cmake
 .PHONY : rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest.dir/clean
 
 rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest.dir/depend:
-	cd /home/tripp/Workspaces/src/rosserial/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tripp/Workspaces/src/rosserial/src /home/tripp/Workspaces/src/rosserial/src/rosserial_client /home/tripp/Workspaces/src/rosserial/build /home/tripp/Workspaces/src/rosserial/build/rosserial_client /home/tripp/Workspaces/src/rosserial/build/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/tripp/Desktop/WiFly/ROS/rosserial/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tripp/Desktop/WiFly/ROS/rosserial/src /home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial_client /home/tripp/Desktop/WiFly/ROS/rosserial/build /home/tripp/Desktop/WiFly/ROS/rosserial/build/rosserial_client /home/tripp/Desktop/WiFly/ROS/rosserial/build/rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : rosserial_client/CMakeFiles/run_tests_rosserial_client_gtest.dir/depend
 

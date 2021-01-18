@@ -1,8 +1,8 @@
-# Install script for directory: /home/tripp/Workspaces/src/rosserial/src/rosserial_client
+# Install script for directory: /home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial_client
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/tripp/Workspaces/src/rosserial/install")
+  set(CMAKE_INSTALL_PREFIX "/home/tripp/Desktop/WiFly/ROS/rosserial/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,37 +38,37 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/tripp/Workspaces/src/rosserial/build/rosserial_client/catkin_generated/installspace/rosserial_client.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/tripp/Desktop/WiFly/ROS/rosserial/build/rosserial_client/catkin_generated/installspace/rosserial_client.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rosserial_client/cmake" TYPE FILE FILES "/home/tripp/Workspaces/src/rosserial/src/rosserial_client/cmake/rosserial_client-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rosserial_client/cmake" TYPE FILE FILES "/home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial_client/cmake/rosserial_client-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rosserial_client/cmake" TYPE FILE FILES
-    "/home/tripp/Workspaces/src/rosserial/build/rosserial_client/catkin_generated/installspace/rosserial_clientConfig.cmake"
-    "/home/tripp/Workspaces/src/rosserial/build/rosserial_client/catkin_generated/installspace/rosserial_clientConfig-version.cmake"
+    "/home/tripp/Desktop/WiFly/ROS/rosserial/build/rosserial_client/catkin_generated/installspace/rosserial_clientConfig.cmake"
+    "/home/tripp/Desktop/WiFly/ROS/rosserial/build/rosserial_client/catkin_generated/installspace/rosserial_clientConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rosserial_client" TYPE FILE FILES "/home/tripp/Workspaces/src/rosserial/src/rosserial_client/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rosserial_client" TYPE FILE FILES "/home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial_client/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/tripp/Workspaces/src/rosserial/build/rosserial_client/catkin_generated/safe_execute_install.cmake")
+  include("/home/tripp/Desktop/WiFly/ROS/rosserial/build/rosserial_client/catkin_generated/safe_execute_install.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rosserial_client/src" TYPE DIRECTORY FILES "/home/tripp/Workspaces/src/rosserial/src/rosserial_client/src/ros_lib")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rosserial_client/src" TYPE DIRECTORY FILES "/home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial_client/src/ros_lib")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/rosserial_client" TYPE PROGRAM FILES "/home/tripp/Workspaces/src/rosserial/build/rosserial_client/catkin_generated/installspace/make_libraries")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/rosserial_client" TYPE PROGRAM FILES "/home/tripp/Desktop/WiFly/ROS/rosserial/build/rosserial_client/catkin_generated/installspace/make_libraries")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/rosserial_client" TYPE PROGRAM FILES "/home/tripp/Workspaces/src/rosserial/build/rosserial_client/catkin_generated/installspace/make_library.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/rosserial_client" TYPE PROGRAM FILES "/home/tripp/Desktop/WiFly/ROS/rosserial/build/rosserial_client/catkin_generated/installspace/make_library.py")
 endif()
 

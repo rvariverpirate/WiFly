@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"rosserial_server\"
 
-CXX_INCLUDES = -I/home/tripp/Workspaces/src/rosserial/src/rosserial_server/include -I/home/tripp/Workspaces/src/rosserial/devel/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial_server/include -I/home/tripp/Desktop/WiFly/ROS/rosserial/devel/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

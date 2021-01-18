@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tripp/Workspaces/src/rosserial/src
+CMAKE_SOURCE_DIR = /home/tripp/Desktop/WiFly/ROS/rosserial/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tripp/Workspaces/src/rosserial/build
+CMAKE_BINARY_DIR = /home/tripp/Desktop/WiFly/ROS/rosserial/build
 
 # Utility rule file for tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/tests.dir/clean:
 .PHONY : CMakeFiles/tests.dir/clean
 
 CMakeFiles/tests.dir/depend:
-	cd /home/tripp/Workspaces/src/rosserial/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tripp/Workspaces/src/rosserial/src /home/tripp/Workspaces/src/rosserial/src /home/tripp/Workspaces/src/rosserial/build /home/tripp/Workspaces/src/rosserial/build /home/tripp/Workspaces/src/rosserial/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/tripp/Desktop/WiFly/ROS/rosserial/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tripp/Desktop/WiFly/ROS/rosserial/src /home/tripp/Desktop/WiFly/ROS/rosserial/src /home/tripp/Desktop/WiFly/ROS/rosserial/build /home/tripp/Desktop/WiFly/ROS/rosserial/build /home/tripp/Desktop/WiFly/ROS/rosserial/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests.dir/depend
 

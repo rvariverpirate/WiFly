@@ -10,10 +10,10 @@
     <param name="subs_name" value="/rpy" />
   </node>
 
-  <!--node pkg="view3D"  type="euler_to_tf.py"  name="Joy_3D" args="0 0 0 0 0 0 1 map Joy 10" >
+  <node pkg="view3D"  type="euler_to_tf.py"  name="Joy_3D" args="0 0 0 0 0 0 1 map Joy 10" >
     <param name="frame_id" value="Joy" />
     <param name="subs_name" value="/commands/rpy_command" />
-  </node-->
+  </node>
 
 </launch>
 

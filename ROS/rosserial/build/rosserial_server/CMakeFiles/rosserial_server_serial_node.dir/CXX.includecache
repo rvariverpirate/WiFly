@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/tripp/Workspaces/src/rosserial/devel/include/rosserial_msgs/Log.h
+/home/tripp/Desktop/WiFly/ROS/rosserial/devel/include/rosserial_msgs/Log.h
 string
 -
 vector
@@ -22,7 +22,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/tripp/Workspaces/src/rosserial/devel/include/rosserial_msgs/RequestMessageInfo.h
+/home/tripp/Desktop/WiFly/ROS/rosserial/devel/include/rosserial_msgs/RequestMessageInfo.h
 ros/service_traits.h
 -
 rosserial_msgs/RequestMessageInfoRequest.h
@@ -30,7 +30,7 @@ rosserial_msgs/RequestMessageInfoRequest.h
 rosserial_msgs/RequestMessageInfoResponse.h
 -
 
-/home/tripp/Workspaces/src/rosserial/devel/include/rosserial_msgs/RequestMessageInfoRequest.h
+/home/tripp/Desktop/WiFly/ROS/rosserial/devel/include/rosserial_msgs/RequestMessageInfoRequest.h
 string
 -
 vector
@@ -46,7 +46,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/tripp/Workspaces/src/rosserial/devel/include/rosserial_msgs/RequestMessageInfoResponse.h
+/home/tripp/Desktop/WiFly/ROS/rosserial/devel/include/rosserial_msgs/RequestMessageInfoResponse.h
 string
 -
 vector
@@ -62,7 +62,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/tripp/Workspaces/src/rosserial/devel/include/rosserial_msgs/RequestServiceInfo.h
+/home/tripp/Desktop/WiFly/ROS/rosserial/devel/include/rosserial_msgs/RequestServiceInfo.h
 ros/service_traits.h
 -
 rosserial_msgs/RequestServiceInfoRequest.h
@@ -70,7 +70,7 @@ rosserial_msgs/RequestServiceInfoRequest.h
 rosserial_msgs/RequestServiceInfoResponse.h
 -
 
-/home/tripp/Workspaces/src/rosserial/devel/include/rosserial_msgs/RequestServiceInfoRequest.h
+/home/tripp/Desktop/WiFly/ROS/rosserial/devel/include/rosserial_msgs/RequestServiceInfoRequest.h
 string
 -
 vector
@@ -86,7 +86,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/tripp/Workspaces/src/rosserial/devel/include/rosserial_msgs/RequestServiceInfoResponse.h
+/home/tripp/Desktop/WiFly/ROS/rosserial/devel/include/rosserial_msgs/RequestServiceInfoResponse.h
 string
 -
 vector
@@ -102,7 +102,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/tripp/Workspaces/src/rosserial/devel/include/rosserial_msgs/TopicInfo.h
+/home/tripp/Desktop/WiFly/ROS/rosserial/devel/include/rosserial_msgs/TopicInfo.h
 string
 -
 vector
@@ -118,7 +118,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/tripp/Workspaces/src/rosserial/src/rosserial_server/include/rosserial_server/async_read_buffer.h
+/home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial_server/include/rosserial_server/async_read_buffer.h
 boost/bind.hpp
 -
 boost/asio.hpp
@@ -128,7 +128,7 @@ boost/function.hpp
 ros/ros.h
 -
 
-/home/tripp/Workspaces/src/rosserial/src/rosserial_server/include/rosserial_server/serial_session.h
+/home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial_server/include/rosserial_server/serial_session.h
 iostream
 -
 boost/bind.hpp
@@ -138,9 +138,9 @@ boost/asio.hpp
 ros/ros.h
 -
 rosserial_server/session.h
-/home/tripp/Workspaces/src/rosserial/src/rosserial_server/include/rosserial_server/rosserial_server/session.h
+/home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial_server/include/rosserial_server/rosserial_server/session.h
 
-/home/tripp/Workspaces/src/rosserial/src/rosserial_server/include/rosserial_server/session.h
+/home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial_server/include/rosserial_server/session.h
 map
 -
 boost/bind.hpp
@@ -162,11 +162,11 @@ topic_tools/shape_shifter.h
 std_msgs/Time.h
 -
 rosserial_server/async_read_buffer.h
-/home/tripp/Workspaces/src/rosserial/src/rosserial_server/include/rosserial_server/rosserial_server/async_read_buffer.h
+/home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial_server/include/rosserial_server/rosserial_server/async_read_buffer.h
 rosserial_server/topic_handlers.h
-/home/tripp/Workspaces/src/rosserial/src/rosserial_server/include/rosserial_server/rosserial_server/topic_handlers.h
+/home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial_server/include/rosserial_server/rosserial_server/topic_handlers.h
 
-/home/tripp/Workspaces/src/rosserial/src/rosserial_server/include/rosserial_server/topic_handlers.h
+/home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial_server/include/rosserial_server/topic_handlers.h
 ros/ros.h
 -
 rosserial_msgs/TopicInfo.h
@@ -178,7 +178,7 @@ rosserial_msgs/RequestServiceInfo.h
 topic_tools/shape_shifter.h
 -
 
-/home/tripp/Workspaces/src/rosserial/src/rosserial_server/src/serial_node.cpp
+/home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial_server/src/serial_node.cpp
 boost/asio.hpp
 -
 boost/bind.hpp
@@ -188,7 +188,7 @@ boost/thread.hpp
 ros/ros.h
 -
 rosserial_server/serial_session.h
-/home/tripp/Workspaces/src/rosserial/src/rosserial_server/src/rosserial_server/serial_session.h
+/home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial_server/src/rosserial_server/serial_session.h
 
 /opt/ros/melodic/include/boost_161_condition_variable.h
 boost/thread/detail/platform.hpp

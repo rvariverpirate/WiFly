@@ -1,0 +1,8 @@
+prefix=/home/tripp/Desktop/WiFly/ROS/rosserial/install
+
+Name: rosserial_vex_cortex
+Description: Description of rosserial_vex_cortex
+Version: 0.8.0
+Cflags: 
+Libs: -L/home/tripp/Desktop/WiFly/ROS/rosserial/install/lib 
+Requires: 

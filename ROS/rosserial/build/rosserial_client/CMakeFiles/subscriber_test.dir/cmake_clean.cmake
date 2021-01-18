@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/subscriber_test.dir/test/subscriber_test.cpp.o"
-  "/home/tripp/Workspaces/src/rosserial/devel/lib/rosserial_client/subscriber_test.pdb"
-  "/home/tripp/Workspaces/src/rosserial/devel/lib/rosserial_client/subscriber_test"
+  "/home/tripp/Desktop/WiFly/ROS/rosserial/devel/lib/rosserial_client/subscriber_test.pdb"
+  "/home/tripp/Desktop/WiFly/ROS/rosserial/devel/lib/rosserial_client/subscriber_test"
 )
 
 # Per-language clean rules from dependency scanning.

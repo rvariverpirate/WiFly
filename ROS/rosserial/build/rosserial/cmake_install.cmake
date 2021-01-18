@@ -1,8 +1,8 @@
-# Install script for directory: /home/tripp/Workspaces/src/rosserial/src/rosserial
+# Install script for directory: /home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/tripp/Workspaces/src/rosserial/install")
+  set(CMAKE_INSTALL_PREFIX "/home/tripp/Desktop/WiFly/ROS/rosserial/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,6 +38,6 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rosserial" TYPE FILE FILES "/home/tripp/Workspaces/src/rosserial/src/rosserial/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rosserial" TYPE FILE FILES "/home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial/package.xml")
 endif()
 

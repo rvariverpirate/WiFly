@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/tripp/Workspaces/src/rosserial/src/rosserial_server/src/udp_socket_node.cpp" "/home/tripp/Workspaces/src/rosserial/build/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/src/udp_socket_node.cpp.o"
+  "/home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial_server/src/udp_socket_node.cpp" "/home/tripp/Desktop/WiFly/ROS/rosserial/build/rosserial_server/CMakeFiles/rosserial_server_udp_socket_node.dir/src/udp_socket_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,8 +17,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/tripp/Workspaces/src/rosserial/src/rosserial_server/include"
-  "/home/tripp/Workspaces/src/rosserial/devel/include"
+  "/home/tripp/Desktop/WiFly/ROS/rosserial/src/rosserial_server/include"
+  "/home/tripp/Desktop/WiFly/ROS/rosserial/devel/include"
   "/opt/ros/melodic/include"
   "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

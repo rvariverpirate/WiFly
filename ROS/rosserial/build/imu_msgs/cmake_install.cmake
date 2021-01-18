@@ -1,8 +1,8 @@
-# Install script for directory: /home/tripp/Workspaces/src/rosserial/src/imu_msgs
+# Install script for directory: /home/tripp/Desktop/WiFly/ROS/rosserial/src/imu_msgs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/tripp/Workspaces/src/rosserial/install")
+  set(CMAKE_INSTALL_PREFIX "/home/tripp/Desktop/WiFly/ROS/rosserial/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/tripp/Workspaces/src/rosserial/build/imu_msgs/catkin_generated/installspace/imu_msgs.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/tripp/Desktop/WiFly/ROS/rosserial/build/imu_msgs/catkin_generated/installspace/imu_msgs.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/imu_msgs/cmake" TYPE FILE FILES
-    "/home/tripp/Workspaces/src/rosserial/build/imu_msgs/catkin_generated/installspace/imu_msgsConfig.cmake"
-    "/home/tripp/Workspaces/src/rosserial/build/imu_msgs/catkin_generated/installspace/imu_msgsConfig-version.cmake"
+    "/home/tripp/Desktop/WiFly/ROS/rosserial/build/imu_msgs/catkin_generated/installspace/imu_msgsConfig.cmake"
+    "/home/tripp/Desktop/WiFly/ROS/rosserial/build/imu_msgs/catkin_generated/installspace/imu_msgsConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/imu_msgs" TYPE FILE FILES "/home/tripp/Workspaces/src/rosserial/src/imu_msgs/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/imu_msgs" TYPE FILE FILES "/home/tripp/Desktop/WiFly/ROS/rosserial/src/imu_msgs/package.xml")
 endif()
 
