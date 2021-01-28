@@ -44,12 +44,12 @@ void rpy_command_callback(const rosserial_msgs::RPY& rpy_command){
   commandVals_g.Y = rpy_command.yaw;
   commandVals_g.A = 0;//(double) rpy_command.Alt;
   //MC.debugPWM();
-  Serial.print("Command roll: ");
+  /*Serial.print("Command roll: ");
   Serial.println(commandVals_g.R);
   Serial.print("Command pitch: ");
   Serial.println(commandVals_g.P);
   Serial.print("Command yaw: ");
-  Serial.println(commandVals_g.Y);
+  Serial.println(commandVals_g.Y);*/
 };
 
 // Create RPY Command Subscriber

@@ -5,10 +5,13 @@
 #include "Camera/WebCam.h"
 
 // Add IMU
-#include "Sensors/IMU.h"
+// #include "Sensors/IMU.h"
 
 // Include ROS and Messages
 #include "ROS/ROS_Node.h"
+
+// Include Flight Controller
+#include "FlightController/Controller.h"
 
 // WiFi Credentials from Network/WiFiLogins.h
 const char* ssid = MyNetwork.ssid;
@@ -26,6 +29,9 @@ void setup(){
 
   // Setup IMU
   setupIMU();
+
+  // Setup Flight Controller
+  setupController();
 
   // Setup WiFi Connection
   WiFi.begin(ssid, password);
@@ -50,16 +56,19 @@ void setup(){
 void loop() {
   // put your main code here, to run repeatedly:
   delay(100);
-  Serial.println("IMU RAW DATA: ");
+  // Serial.println("IMU RAW DATA: ");
   printIMU();
   
-  double * IMU_data = getIMU_vals();
-  Serial.print("IMU roll: ");
+  IMU_data = getIMU_vals();
+  /*Serial.print("IMU roll: ");
   Serial.println(String(IMU_data[0], DEC));
   Serial.print("IMU pitch: ");
   Serial.println(String(IMU_data[1], DEC));
   Serial.print("IMU yaw: ");
-  Serial.println(String(IMU_data[2], DEC));
+  Serial.println(String(IMU_data[2], DEC));*/
+
+  // Stabilize Drone: TODO move to seperate thread
+  // stabilizeDrone();
 
   // Publish Debug Message
   chatter.publish( &str_msg );

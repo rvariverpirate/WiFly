@@ -9,6 +9,9 @@ TwoWire I2Ctwo = TwoWire(0);
 MPU9250 IMU(I2Ctwo,0x68);
 int status;
 
+// Globabl Variable to Store Measured IMU Data
+double * IMU_data;
+
 // Setup IMU
 void setupIMU(){
     Serial.println("Setting up IMU...");
