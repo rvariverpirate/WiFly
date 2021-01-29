@@ -56,19 +56,22 @@ void setup(){
 void loop() {
   // put your main code here, to run repeatedly:
   delay(100);
-  // Serial.println("IMU RAW DATA: ");
-  printIMU();
   
   IMU_data = getIMU_vals();
-  /*Serial.print("IMU roll: ");
+  Serial.print("IMU roll: ");
   Serial.println(String(IMU_data[0], DEC));
   Serial.print("IMU pitch: ");
   Serial.println(String(IMU_data[1], DEC));
   Serial.print("IMU yaw: ");
-  Serial.println(String(IMU_data[2], DEC));*/
+  Serial.println(String(IMU_data[2], DEC));
+
+  // Udate Measured Values
+  roll.measured = IMU_data[0];
+  pitch.measured = IMU_data[1];
+  yaw.measured = IMU_data[2];
 
   // Stabilize Drone: TODO move to seperate thread
-  // stabilizeDrone();
+  stabilizeDrone();
 
   // Publish Debug Message
   chatter.publish( &str_msg );

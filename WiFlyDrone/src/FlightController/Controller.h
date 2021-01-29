@@ -23,15 +23,19 @@ struct PID_vals yaw;
 struct PID_vals altitude;
 
 // Create actual PID Loops
-PID roll_PID(&IMU_data[0], &roll.U, &roll.desired, roll.kP, roll.kI, roll.kD, DIRECT);
-PID pitch_PID(&IMU_data[1], &pitch.U, &pitch.desired, pitch.kP, pitch.kI, pitch.kD, DIRECT);
-PID yaw_PID(&IMU_data[2], &yaw.U, &yaw.desired, yaw.kP, yaw.kI, yaw.kD, DIRECT);
+PID roll_PID(&roll.measured, &roll.U, &roll.desired, roll.kP, roll.kI, roll.kD, DIRECT);
+PID pitch_PID(&pitch.measured, &pitch.U, &pitch.desired, pitch.kP, pitch.kI, pitch.kD, DIRECT);
+PID yaw_PID(&yaw.measured, &yaw.U, &yaw.desired, yaw.kP, yaw.kI, yaw.kD, DIRECT);
 PID altitude_PID(&altitude.measured, &altitude.U, &altitude.desired, altitude.kP, altitude.kI, altitude.kD, DIRECT);
 
 void setupController(){
+  Serial.println("Setting up Controller..");
+
+  delay(100);
+
   // Turn on Control Loops
-  /*roll_PID.SetMode(AUTOMATIC);
-  pitch_PID.SetMode(AUTOMATIC);
+  roll_PID.SetMode(AUTOMATIC);
+  /*pitch_PID.SetMode(AUTOMATIC);
   yaw_PID.SetMode(AUTOMATIC);
   altitude_PID.SetMode(AUTOMATIC);*/
 
@@ -44,6 +48,8 @@ void setupController(){
 
 // Stabilize Drone: Caclualte PID's and Update PWM, run as seperate Thread
 void stabilizeDrone(){
+    Serial.println("StabilizeDrone:");
+
     // Update Control Vars by calculating the PID for RPY and Alt
     roll_PID.Compute();
     pitch_PID.Compute();
