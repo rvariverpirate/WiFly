@@ -50,6 +50,19 @@ void setupController(){
 void stabilizeDrone(){
     Serial.println("StabilizeDrone:");
 
+    IMU_data = getIMU_vals();
+    Serial.print("IMU roll: ");
+    Serial.println(String(IMU_data[0], DEC));
+    Serial.print("IMU pitch: ");
+    Serial.println(String(IMU_data[1], DEC));
+    Serial.print("IMU yaw: ");
+    Serial.println(String(IMU_data[2], DEC));
+
+    // Udate Measured Values
+    roll.measured = IMU_data[0];
+    pitch.measured = IMU_data[1];
+    yaw.measured = IMU_data[2];
+
     // Update Control Vars by calculating the PID for RPY and Alt
     roll_PID.Compute();
     pitch_PID.Compute();
