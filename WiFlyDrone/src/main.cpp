@@ -55,7 +55,7 @@ void loop() {
   delay(100);
 
   // Stabilize Drone: TODO move to seperate thread
-  stabilizeDrone();
+  //stabilizeDrone();
 
   // Publish Debug Message
   chatter.publish( &str_msg );
