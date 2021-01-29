@@ -23,10 +23,12 @@ void setupIMU(){
     // Start IMU
     status = IMU.begin();
     if (status < 0) {
-        Serial.println("IMU initialization unsuccessful");
-        Serial.println("Check IMU wiring or try cycling power");
-        Serial.print("Status: ");
-        Serial.println(status);
+        while(1){
+            Serial.println("IMU initialization unsuccessful");
+            Serial.println("Check IMU wiring or try cycling power");
+            Serial.print("Status: ");
+            Serial.println(status);
+        }
     }
     else{
         Serial.println("IMU Checks out!");

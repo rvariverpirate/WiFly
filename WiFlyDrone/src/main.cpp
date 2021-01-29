@@ -4,9 +4,6 @@
 #include <WiFi.h>
 #include "Camera/WebCam.h"
 
-// Add IMU
-// #include "Sensors/IMU.h"
-
 // Include ROS and Messages
 #include "ROS/ROS_Node.h"
 
@@ -57,6 +54,8 @@ void loop() {
   // put your main code here, to run repeatedly:
   delay(100);
   
+  printIMU();
+
   IMU_data = getIMU_vals();
   Serial.print("IMU roll: ");
   Serial.println(String(IMU_data[0], DEC));
