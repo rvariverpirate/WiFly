@@ -23,12 +23,10 @@ void setupIMU(){
     // Start IMU
     status = IMU.begin();
     if (status < 0) {
-        while(1){
-            Serial.println("IMU initialization unsuccessful");
-            Serial.println("Check IMU wiring or try cycling power");
-            Serial.print("Status: ");
-            Serial.println(status);
-        }
+        Serial.println("IMU initialization unsuccessful");
+        Serial.println("Check IMU wiring or try cycling power");
+        Serial.print("Status: ");
+        Serial.println(status);
     }
     else{
         Serial.println("IMU Checks out!");
@@ -59,6 +57,9 @@ double* getRollPitchAccel(int16_t x, int16_t y, int16_t z, double *rp_tmp){
 }
 
 double * getIMU_vals(){
+    // Read IMU Data
+    IMU.readSensor();
+
    // Get the Roll and Pitch
    double rp_tmp[5];
    double * rollPitch_accel = getRollPitchAccel(IMU.getAccelX_mss(), IMU.getAccelY_mss(), IMU.getAccelZ_mss(), rp_tmp);
