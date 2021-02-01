@@ -1,5 +1,8 @@
 #include "MPU9250.h"
 
+#define SENSORS_RADS_TO_DPS                                                    \
+  (57.29577793F) /**< Rad/s to degrees/s  multiplier */
+
 // Alternative I2C Definition
 #define SDA2 13// 14
 #define SCL2 14// 2
@@ -86,6 +89,7 @@ void printIMU(){
     IMU.readSensor();
 
     // Display IMU Data
+    /*
     Serial.print(IMU.getAccelX_mss(),6);
     Serial.print("\t");
     Serial.print(IMU.getAccelY_mss(),6);
@@ -104,5 +108,30 @@ void printIMU(){
     Serial.print("\t");
     Serial.print(IMU.getMagZ_uT(),6);
     Serial.print("\t");
-    Serial.println(IMU.getTemperature_C(),6);
-}
+    Serial.println(IMU.getTemperature_C(),6);*/
+
+
+    // 'Raw' values to match expectation of MotionCal
+    Serial.print("Raw:");
+    Serial.print(int(IMU.getAccelX_mss()*8192/9.8)); Serial.print(",");
+    Serial.print(int(IMU.getAccelY_mss()*8192/9.8)); Serial.print(",");
+    Serial.print(int(IMU.getAccelZ_mss()*8192/9.8)); Serial.print(",");
+    Serial.print(int(IMU.getGyroX_rads()*SENSORS_RADS_TO_DPS*16)); Serial.print(",");
+    Serial.print(int(IMU.getGyroY_rads()*SENSORS_RADS_TO_DPS*16)); Serial.print(",");
+    Serial.print(int(IMU.getGyroZ_rads()*SENSORS_RADS_TO_DPS*16)); Serial.print(",");
+    Serial.print(int(IMU.getMagX_uT()*10)); Serial.print(",");
+    Serial.print(int(IMU.getMagY_uT()*10)); Serial.print(",");
+    Serial.print(int(IMU.getMagZ_uT()*10)); Serial.println("");
+
+    // unified data
+    Serial.print("Uni:");
+    Serial.print(IMU.getAccelX_mss()); Serial.print(",");
+    Serial.print(IMU.getAccelY_mss()); Serial.print(",");
+    Serial.print(IMU.getAccelZ_mss()); Serial.print(",");
+    Serial.print(IMU.getGyroX_rads(), 4); Serial.print(",");
+    Serial.print(IMU.getGyroY_rads(), 4); Serial.print(",");
+    Serial.print(IMU.getGyroZ_rads(), 4); Serial.print(",");
+    Serial.print(IMU.getMagX_uT()); Serial.print(",");
+    Serial.print(IMU.getMagY_uT()); Serial.print(",");
+    Serial.print(IMU.getMagZ_uT()); Serial.println("");
+    }

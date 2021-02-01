@@ -22,15 +22,16 @@ void setup(){
   Serial.println();
 
   // Setup Web Cam
-  setupCamera();
+  // setupCamera();
 
   // Setup IMU
   setupIMU();
 
   // Setup Flight Controller
-  setupController();
+  //setupController();
 
   // Setup WiFi Connection
+  /*
   WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED) {
@@ -44,19 +45,22 @@ void setup(){
   setupROS();
 
   // Start the Camera Server
-  startCameraServer();
+  //startCameraServer();
   Serial.print("Camera Ready! Use 'http://");
   Serial.print(WiFi.localIP());
   Serial.println("' to connect");
+  */
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  delay(100);
+  delay(10);
 
   // Stabilize Drone: TODO move to seperate thread
   //stabilizeDrone();
+  printIMU();
 
+  /*
   // Publish Debug Message
   chatter.publish( &str_msg );
 
@@ -72,4 +76,5 @@ void loop() {
 
   // Test ROS
   testROS();
+  */
 }
