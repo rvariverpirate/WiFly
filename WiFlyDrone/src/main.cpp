@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <EEPROM.h>
 #include "esp_camera.h"
 #include "Network/WiFiLogins.h"
 #include <WiFi.h>
