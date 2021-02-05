@@ -23,16 +23,12 @@ void setup(){
   Serial.println();
 
   // Setup Web Cam
-  // setupCamera();
+  setupCamera();
 
-  // Setup IMU
-  setupIMU();
-
-  // Setup Flight Controller
-  //setupController();
+  // Setup AHRS: IMU Sensor Fusion
+  setupAHRS();
 
   // Setup WiFi Connection
-  /*
   WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED) {
@@ -46,36 +42,29 @@ void setup(){
   setupROS();
 
   // Start the Camera Server
-  //startCameraServer();
+  startCameraServer();
   Serial.print("Camera Ready! Use 'http://");
   Serial.print(WiFi.localIP());
   Serial.println("' to connect");
-  */
+
+  // Setup Flight Controller
+  setupController();
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  delay(10);
-
-  // Stabilize Drone: TODO move to seperate thread
-  //stabilizeDrone();
-  printIMU();
-
-  /*
-  // Publish Debug Message
-  chatter.publish( &str_msg );
+  delay(100);
 
   // Create Roll Pitch Yaw Message
   rpy_msg.header.frame_id = "/world";
   rpy_msg.header.stamp = nh.now();// timestamp
-  rpy_msg.roll = IMU_data[0];// TODO: I have no idea if these are
-  rpy_msg.pitch = IMU_data[1];// in the right locations
-  rpy_msg.yaw = IMU_data[2];// Too lazy to check right now
+  rpy_msg.roll = roll.measured;// TODO: I have no idea if these are
+  rpy_msg.pitch = pitch.measured;// in the right locations
+  rpy_msg.yaw = yaw.measured;// Too lazy to check right now
 
   // Publish Roll, Pitch, Yaw message
   rpy.publish(&rpy_msg);
 
   // Test ROS
   testROS();
-  */
 }

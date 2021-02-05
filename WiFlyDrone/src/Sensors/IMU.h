@@ -1,7 +1,7 @@
-#include "MPU9250.h"
+/*#include "MPU9250.h"
 
 #define SENSORS_RADS_TO_DPS                                                    \
-  (57.29577793F) /**< Rad/s to degrees/s  multiplier */
+  (57.29577793F) // Rad/s to degrees/s  multiplier
 
 // Alternative I2C Definition
 #define SDA2 13// 14
@@ -14,6 +14,9 @@ int status;
 
 // Globabl Variable to Store Measured IMU Data
 double * IMU_data;
+
+// Track Raw Values
+float gx, gy, gz, ax, ay, az, mx, my, mz, temp;
 
 // Setup IMU
 void setupIMU(){
@@ -43,6 +46,20 @@ void setupIMU(){
     IMU.setDlpfBandwidth(MPU9250::DLPF_BANDWIDTH_20HZ);
     // setting SRD to 19 for a 50 Hz update rate
     IMU.setSrd(19);
+}
+
+void getRawSensorVals(){
+    IMU.readSensor();
+    ax = IMU.getAccelX_mss();
+    ay = IMU.getAccelY_mss();
+    az = IMU.getAccelZ_mss();
+    gx = IMU.getGyroX_rads();
+    gy = IMU.getGyroY_rads();
+    gz = IMU.getGyroZ_rads();
+    mx = IMU.getMagX_uT();
+    my = IMU.getMagY_uT();
+    mz = IMU.getMagZ_uT();
+    temp = IMU.getTemperature_C();
 }
 
 // Convert Acceleration to Roll Pitch Yaw
@@ -89,7 +106,6 @@ void printIMU(){
     IMU.readSensor();
 
     // Display IMU Data
-    /*
     Serial.print(IMU.getAccelX_mss(),6);
     Serial.print("\t");
     Serial.print(IMU.getAccelY_mss(),6);
@@ -108,7 +124,7 @@ void printIMU(){
     Serial.print("\t");
     Serial.print(IMU.getMagZ_uT(),6);
     Serial.print("\t");
-    Serial.println(IMU.getTemperature_C(),6);*/
+    Serial.println(IMU.getTemperature_C(),6);
 
 
     // 'Raw' values to match expectation of MotionCal
@@ -135,3 +151,4 @@ void printIMU(){
     Serial.print(IMU.getMagY_uT()); Serial.print(",");
     Serial.print(IMU.getMagZ_uT()); Serial.println("");
     }
+    */

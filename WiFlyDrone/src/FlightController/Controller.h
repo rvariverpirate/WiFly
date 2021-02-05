@@ -1,6 +1,6 @@
 #include <PID_v1.h>
 #include <pthread.h>
-#include "../Sensors/IMU.h"
+#include "../AHRS/AHRS.h"
 
 struct PID_vals
 {
@@ -29,8 +29,59 @@ PID pitch_PID(&pitch.measured, &pitch.U, &pitch.desired, pitch.kP, pitch.kI, pit
 PID yaw_PID(&yaw.measured, &yaw.U, &yaw.desired, yaw.kP, yaw.kI, yaw.kD, DIRECT);
 PID altitude_PID(&altitude.measured, &altitude.U, &altitude.desired, altitude.kP, altitude.kI, altitude.kD, DIRECT);
 
+// Create Global Time Delta
+float deltat;
+
+
 // Stabilize Drone: Caclualte PID's and Update PWM, run as seperate Thread
-void *stabilizeDrone(void *threadId){
+void *stabilizeDroneFusion(void *threadId){
+    while(1){
+
+      delay(10);
+      // Serial.println("StabilizeDroneFusion:");
+
+      // Get IMU Data and Perform Sensor Fusion
+      updateAHRS();
+
+      // Udate Measured Values
+      roll.measured = AHRS.roll;
+      pitch.measured = AHRS.pitch;
+      yaw.measured = AHRS.yaw;
+
+      // Update Control Vars by calculating the PID for RPY and Alt
+      roll_PID.Compute();
+      pitch_PID.Compute();
+      yaw_PID.Compute();
+      altitude_PID.Compute();
+
+      // Get PID Outputs
+      double U_A = altitude.U;
+      double U_R = roll.U;
+      double U_P = pitch.U;
+      double U_Y = yaw.U;
+
+      // TODO: Add Yaw to equation
+
+      // Update PWM based on PID Outputs
+      double pwm_RF = (U_A - U_R - U_P);// Right Front Motor
+      double pwm_RB = (U_A - U_R + U_P);// Right Back Motor
+      double pwm_LB = (U_A + U_R + U_P);// Left Back Motor
+      double pwm_LF = (U_A + U_R - U_P);// Left Front Motor
+
+      /*Serial.println("ROLL:");
+      Serial.print(String(roll.desired, DEC));
+      Serial.print(" ");
+      Serial.print(String(roll.measured, DEC));
+      Serial.print(" ");
+      Serial.print(String(roll.U, DEC));
+      Serial.print(" ");
+      Serial.println(String(pwm_RF, DEC));*/
+    }
+}
+
+/*
+// Stabilize Drone: Caclualte PID's and Update PWM, run as seperate Thread
+void *stabilizeDroneRAW(void *threadId){
     while(1){
         Serial.println("StabilizeDrone:");
         IMU_data = getIMU_vals();
@@ -76,6 +127,7 @@ void *stabilizeDrone(void *threadId){
         Serial.println(String(pwm_RF, DEC));
     }
 }
+*/
 
 void setupController(){
   Serial.println("Setting up Controller..");
@@ -97,7 +149,7 @@ void setupController(){
   // Put Controller Stabilization in its own Thread
   pthread_t stabilizer;
   int returnValue;
-  returnValue = pthread_create(&stabilizer, NULL, stabilizeDrone, (void *)1);
+  returnValue = pthread_create(&stabilizer, NULL, stabilizeDroneFusion, (void *)1);
 
   if (returnValue) {
     Serial.println("An error has occurred");
