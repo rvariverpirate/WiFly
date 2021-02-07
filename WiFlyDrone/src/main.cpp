@@ -53,7 +53,7 @@ void setup(){
 
 void loop() {
   // put your main code here, to run repeatedly:
-  delay(100);
+  delay(100);// TODO: Rrplace delays, they are killing your execution time
 
   // Create Roll Pitch Yaw Message
   rpy_msg.header.frame_id = "/world";

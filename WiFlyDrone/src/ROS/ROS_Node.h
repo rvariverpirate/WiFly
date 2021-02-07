@@ -9,8 +9,9 @@
 #define ROSSERIAL_ARDUINO_TCP
 
 // Set the rosserial socket server IP address
-IPAddress server(192, 168, 238, 243);// (192, 168, 1, 167); // Linux Box: 167, DeadBox: 215
+IPAddress server(192, 168, 1, 167); // Linux Box: 167, DeadBox: 215
 // Always check this... especially when switching networks...
+// Pone ROS Master IP: 192, 168, 238, 243 
 
 // Set the rosserial socket server port
 const uint16_t serverPort = 11411;

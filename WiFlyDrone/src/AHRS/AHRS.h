@@ -32,7 +32,7 @@
 #include "quaternionFilters.h"
 #include "MPU9250.h"
 
-#define SerialDebug true  // Set to true to get Serial output for debugging
+#define SerialDebug false  // Set to true to get Serial output for debugging
 
 // Pin definitions
 int myLed  = 33;  // Set up pin 13 led for toggling
