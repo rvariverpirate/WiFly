@@ -36,8 +36,6 @@ float deltat;
 // Stabilize Drone: Caclualte PID's and Update PWM, run as seperate Thread
 void *stabilizeDroneFusion(void *threadId){
     while(1){
-      delay(250);
-
       // Get IMU Data and Perform Sensor Fusion
       updateAHRS();
 
@@ -47,7 +45,7 @@ void *stabilizeDroneFusion(void *threadId){
       yaw.measured = AHRS.yaw;
 
       // Print Calculated Orientation
-      Serial.println("Roll: ");
+      /*Serial.println("Roll: ");
       Serial.print(roll.measured);
       Serial.print(", ");
       Serial.print(AHRS.roll);
@@ -58,7 +56,7 @@ void *stabilizeDroneFusion(void *threadId){
       Serial.println("Yaw: ");
       Serial.print(yaw.measured);
       Serial.print(", ");
-      Serial.print(AHRS.yaw);
+      Serial.print(AHRS.yaw);*/
 
       // Update Control Vars by calculating the PID for RPY and Alt
       roll_PID.Compute();
@@ -168,6 +166,7 @@ void setupController(){
     while(1);
   }
 
+  Serial.println("Controller setup complete, AHRS Control Thread running");
 }
 
 // Scale a Double from one range to another

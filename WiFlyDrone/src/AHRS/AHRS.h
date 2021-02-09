@@ -32,7 +32,7 @@
 #include "quaternionFilters.h"
 #include "MPU9250.h"
 
-#define SerialDebug false  // Set to true to get Serial output for debugging
+#define SerialDebug false// Set to true to get Serial output for debugging
 
 // Pin definitions
 int myLed  = 33;  // Set up pin 13 led for toggling
@@ -52,7 +52,6 @@ void setupAHRS()
 {
   I2Ctwo.begin(SDA2,SCL2, 400000);
   // TWBR = 12;  // 400 kbit/sec I2C speed
-  // Serial.begin(115200);
 
   while(!Serial){};
 
@@ -188,6 +187,7 @@ void setupAHRS()
     Serial.flush();
     abort();
   }
+  delay(5000);
 }
 
 void updateAHRS()
@@ -242,9 +242,9 @@ void updateAHRS()
                             AHRS.gy * DEG_TO_RAD, AHRS.gz * DEG_TO_RAD, AHRS.my,
                             AHRS.mx, AHRS.mz, AHRS.deltat);*/ //Running at ~4kHz
   
-    MadgwickQuaternionUpdate(AHRS.ax, AHRS.ay, AHRS.az, AHRS.gx * DEG_TO_RAD,
+    /*MadgwickQuaternionUpdate(AHRS.ax, AHRS.ay, AHRS.az, AHRS.gx * DEG_TO_RAD,
                          AHRS.gy * DEG_TO_RAD, AHRS.gz * DEG_TO_RAD, AHRS.my,
-                         AHRS.mx, AHRS.mz, AHRS.deltat);
+                         AHRS.mx, AHRS.mz, AHRS.deltat);*/
 
     // Serial print and/or display at 0.5 s rate independent of data rates
     AHRS.delt_t = millis() - AHRS.count;
@@ -309,12 +309,12 @@ void updateAHRS()
 
     if(SerialDebug)
     {
-        Serial.print("Yaw, Pitch, Roll: ");
-        Serial.print(AHRS.yaw, 2);
+        Serial.print("Roll, Pitch, Yaw: ");
+        Serial.print(AHRS.roll, 2);
         Serial.print(", ");
         Serial.print(AHRS.pitch, 2);
         Serial.print(", ");
-        Serial.println(AHRS.roll, 2);
+        Serial.println(AHRS.yaw, 2);
 
         Serial.print("rate = ");
         Serial.print((float)AHRS.sumCount / AHRS.sum, 2);

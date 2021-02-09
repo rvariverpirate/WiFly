@@ -15,6 +15,11 @@
 const char* ssid = MyNetwork.ssid;
 const char* password = MyNetwork.password;
 
+// Setup Timers to Replace Delays
+unsigned long rosTransmitTimer = millis();
+unsigned long rosTransmitPeriod = 250;// (ms)
+
+// Primary Setup Method
 void setup(){
 
   // Setup Serial Communication at 115200 Baud Rate
@@ -29,6 +34,7 @@ void setup(){
   setupAHRS();
 
   // Setup WiFi Connection
+  Serial.println("Connecting to WiFi");
   WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED) {
@@ -52,19 +58,40 @@ void setup(){
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  delay(100);// TODO: Rrplace delays, they are killing your execution time
+  unsigned long currentTime = millis();
 
-  // Create Roll Pitch Yaw Message
-  rpy_msg.header.frame_id = "/world";
-  rpy_msg.header.stamp = nh.now();// timestamp
-  rpy_msg.roll = roll.measured;// TODO: I have no idea if these are
-  rpy_msg.pitch = pitch.measured;// in the right locations
-  rpy_msg.yaw = yaw.measured;// Too lazy to check right now
+  // Periodically Transmit Orientation data Back to ROS master
+  // Note: Use non Thead Blocking timers instead of delay
+  if(currentTime - rosTransmitTimer > rosTransmitPeriod) {
 
-  // Publish Roll, Pitch, Yaw message
-  rpy.publish(&rpy_msg);
+    Serial.println("");
+    Serial.println("From main loop...");
+    Serial.print("Roll: ");
+    Serial.print(roll.measured);
+    Serial.print(", Pitch: ");
+    Serial.print(pitch.measured);
+    Serial.print(", Yaw: ");
+    Serial.println(yaw.measured);
 
-  // Test ROS
-  testROS();
+    Serial.print("ax = ");  Serial.print((int)1000 * AHRS.ax);
+    Serial.print(" ay = "); Serial.print((int)1000 * AHRS.ay);
+    Serial.print(" az = "); Serial.print((int)1000 * AHRS.az);
+    Serial.println(" mg");
+
+    Serial.print("rate = ");
+    Serial.print((float)AHRS.sumCount / AHRS.sum, 2);
+    Serial.println(" Hz");
+
+
+    rosTransmitTimer = currentTime;
+    // Create Roll Pitch Yaw Message
+    rpy_msg.header.frame_id = "/world";
+    rpy_msg.header.stamp = nh.now();// timestamp
+    rpy_msg.roll = roll.measured;// TODO: I have no idea if these are
+    rpy_msg.pitch = pitch.measured;// in the right locations
+    rpy_msg.yaw = yaw.measured;// Too lazy to check right now
+
+    // Publish Roll, Pitch, Yaw message
+    rpy.publish(&rpy_msg);
+  }
 }
