@@ -17,7 +17,10 @@ const char* password = MyNetwork.password;
 
 // Setup Timers to Replace Delays
 unsigned long rosTransmitTimer = millis();
-unsigned long rosTransmitPeriod = 250;// (ms)
+unsigned long rosTransmitPeriod = 50;// (ms)
+
+// Flag indicating Wether or not to Use Thread for Stabilization Loop
+bool useThread = false;
 
 // Primary Setup Method
 void setup(){
@@ -54,11 +57,15 @@ void setup(){
   Serial.println("' to connect");
 
   // Setup Flight Controller
-  setupController();
+  setupController(useThread);// Boolean indicates wther to use seperate thread or not
 }
 
 void loop() {
   unsigned long currentTime = millis();
+
+  if(!useThread){
+    stabilizeDroneFusion_2();
+  }
 
   // Periodically Transmit Orientation data Back to ROS master
   // Note: Use non Thead Blocking timers instead of delay
@@ -81,9 +88,9 @@ void loop() {
     Serial.print("rate = ");
     Serial.print((float)AHRS.sumCount / AHRS.sum, 2);
     Serial.println(" Hz");
+    Serial.print("AHRS.sumCount: "); Serial.println(AHRS.sumCount);
+    Serial.print("AHRS.sum: "); Serial.println(AHRS.sum);
 
-
-    rosTransmitTimer = currentTime;
     // Create Roll Pitch Yaw Message
     rpy_msg.header.frame_id = "/world";
     rpy_msg.header.stamp = nh.now();// timestamp
@@ -93,5 +100,10 @@ void loop() {
 
     // Publish Roll, Pitch, Yaw message
     rpy.publish(&rpy_msg);
+
+    testROS();
+    
+    // Update Transmit Timer
+    rosTransmitTimer = currentTime;
   }
 }

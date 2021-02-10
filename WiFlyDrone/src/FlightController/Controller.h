@@ -32,6 +32,38 @@ PID altitude_PID(&altitude.measured, &altitude.U, &altitude.desired, altitude.kP
 // Create Global Time Delta
 float deltat;
 
+// Stabilize Drone: Caclualte PID's and Update PWM (keep in main loop for now)
+void stabilizeDroneFusion_2(){
+
+      // Get IMU Data and Perform Sensor Fusion
+      updateAHRS();
+
+      // Udate Measured Values
+      roll.measured = AHRS.roll;
+      pitch.measured = AHRS.pitch;
+      yaw.measured = AHRS.yaw;
+
+      // Update Control Vars by calculating the PID for RPY and Alt
+      roll_PID.Compute();
+      pitch_PID.Compute();
+      yaw_PID.Compute();
+      altitude_PID.Compute();
+
+      // Get PID Outputs
+      double U_A = altitude.U;
+      double U_R = roll.U;
+      double U_P = pitch.U;
+      double U_Y = yaw.U;
+
+      // TODO: Add Yaw to equation
+
+      // Update PWM based on PID Outputs
+      double pwm_RF = (U_A - U_R - U_P);// Right Front Motor
+      double pwm_RB = (U_A - U_R + U_P);// Right Back Motor
+      double pwm_LB = (U_A + U_R + U_P);// Left Back Motor
+      double pwm_LF = (U_A + U_R - U_P);// Left Front Motor
+}
+
 
 // Stabilize Drone: Caclualte PID's and Update PWM, run as seperate Thread
 void *stabilizeDroneFusion(void *threadId){
@@ -139,7 +171,7 @@ void *stabilizeDroneRAW(void *threadId){
 }
 */
 
-void setupController(){
+void setupController(bool useSeperateThread){
   Serial.println("Setting up Controller..");
 
   delay(100);
@@ -156,17 +188,20 @@ void setupController(){
   yaw_PID.SetOutputLimits(0, 255);
   altitude_PID.SetOutputLimits(0, 255);*/
 
-  // Put Controller Stabilization in its own Thread
-  pthread_t stabilizer;
-  int returnValue;
-  returnValue = pthread_create(&stabilizer, NULL, stabilizeDroneFusion, (void *)1);
+  if(useSeperateThread){
+    // Put Controller Stabilization in its own Thread
+    pthread_t stabilizer;
+    int returnValue;
+    returnValue = pthread_create(&stabilizer, NULL, stabilizeDroneFusion, (void *)1);
 
-  if (returnValue) {
-    Serial.println("An error has occurred");
-    while(1);
+    if (returnValue) {
+      Serial.println("An error has occurred");
+      while(1);
+    }
+    Serial.println("Stabilization Thread Running");
   }
 
-  Serial.println("Controller setup complete, AHRS Control Thread running");
+  Serial.println("Controller setup complete");
 }
 
 // Scale a Double from one range to another

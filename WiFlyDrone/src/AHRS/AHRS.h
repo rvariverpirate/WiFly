@@ -34,6 +34,11 @@
 
 #define SerialDebug false// Set to true to get Serial output for debugging
 
+#define RADS_TO_DEG (57.29577793F) // Radians to Degrees  multiplier
+#define DEG_TO_RAD 1.0/(57.29577793F) // Degrees to Radians multiplier
+
+
+
 // Pin definitions
 int myLed  = 33;  // Set up pin 13 led for toggling
 
@@ -242,9 +247,9 @@ void updateAHRS()
                             AHRS.gy * DEG_TO_RAD, AHRS.gz * DEG_TO_RAD, AHRS.my,
                             AHRS.mx, AHRS.mz, AHRS.deltat);*/ //Running at ~4kHz
   
-    /*MadgwickQuaternionUpdate(AHRS.ax, AHRS.ay, AHRS.az, AHRS.gx * DEG_TO_RAD,
+    MadgwickQuaternionUpdate(AHRS.ax, AHRS.ay, AHRS.az, AHRS.gx * DEG_TO_RAD,
                          AHRS.gy * DEG_TO_RAD, AHRS.gz * DEG_TO_RAD, AHRS.my,
-                         AHRS.mx, AHRS.mz, AHRS.deltat);*/
+                         AHRS.mx, AHRS.mz, AHRS.deltat);
 
     // Serial print and/or display at 0.5 s rate independent of data rates
     AHRS.delt_t = millis() - AHRS.count;
@@ -298,14 +303,14 @@ void updateAHRS()
                 * *(getQ()+3)), *getQ() * *getQ() - *(getQ()+1)
                 * *(getQ()+1) - *(getQ()+2) * *(getQ()+2) + *(getQ()+3)
                 * *(getQ()+3));
-    AHRS.pitch *= RAD_TO_DEG;
-    AHRS.yaw   *= RAD_TO_DEG;
+    // AHRS.pitch *= RAD_TO_DEG;
+    // AHRS.yaw   *= RAD_TO_DEG;
 
     // Declination of SparkFun Electronics (40°05'26.6"N 105°11'05.9"W) is
     // 	8° 30' E  ± 0° 21' (or 8.5°) on 2016-07-19
     // - http://www.ngdc.noaa.gov/geomag-web/#declination
-    AHRS.yaw  -= 8.5;
-    AHRS.roll *= RAD_TO_DEG;
+    // AHRS.yaw  -= 8.5;
+    // AHRS.roll *= RAD_TO_DEG;
 
     if(SerialDebug)
     {
