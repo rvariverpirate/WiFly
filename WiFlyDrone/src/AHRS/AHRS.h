@@ -43,8 +43,8 @@
 int myLed  = 33;  // Set up pin 13 led for toggling
 
 // Alternative I2C Definition
-#define SDA2 13// 14
-#define SCL2 14// 2
+#define SDA2 13// Bread Board: 13// 14
+#define SCL2 15// Bread Board: 14// 2
 TwoWire I2Ctwo = TwoWire(0);
 #define I2Cclock 400000
 #define MPU9250_ADDRESS MPU9250_ADDRESS_AD0   // Use either this line or the next to select which I2C address your device is using

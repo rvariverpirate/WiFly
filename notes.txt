@@ -8,3 +8,25 @@ Multiple Files:
 for file in *.py ; do
     vi +':w ++ff=unix' +':q' "${file}"
 done
+
+Untar To Directory (/opt recomended for large programs)
+tar xf file.tar -C /path/to/directory
+
+Provide Read Write Execute Permission to All Useres for a File
+chmod a+rwx file1
+
+Recursively Apply to a Directory
+chmod -R a+rwx /var/www/html
+
+echo 'PATH=$HOME/kafkaBlah/bin:$PATH' >> $HOME/.bashrc
+
+For Eagle PCB remove libcb libraries
+sudo rm -rf /opt/eagle9.x.x/lib/libcb*
+
+libicuuc.so.56           libxcb-dri2.so.0
+libkrb5.so.3             libxcb-dri3.so.0
+libkrb5support.so.0      libxcb-glx.so.0
+libpcre.so.1             libxcb-present.so.0
+libplc4.so               libxcb-sync.so.1
+libplds4.so              libxcb-xfixes.so.0
+
