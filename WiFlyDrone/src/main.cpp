@@ -54,6 +54,7 @@ void setup(){
   startCameraServer();
   Serial.print("Camera Ready! Use 'http://");
   Serial.print(WiFi.localIP());
+  Serial.print("/stream");
   Serial.println("' to connect");
 
   // Setup Flight Controller
@@ -63,6 +64,8 @@ void setup(){
 void loop() {
   unsigned long currentTime = millis();
 
+
+  // If threaded solution is unstable use this instead
   if(!useThread){
     stabilizeDroneFusion_2();
   }
@@ -71,7 +74,7 @@ void loop() {
   // Note: Use non Thead Blocking timers instead of delay
   if(currentTime - rosTransmitTimer > rosTransmitPeriod) {
 
-    Serial.println("");
+    /*Serial.println("");
     Serial.println("From main loop...");
     Serial.print("Roll: ");
     Serial.print(roll.measured);
@@ -89,7 +92,7 @@ void loop() {
     Serial.print((float)AHRS.sumCount / AHRS.sum, 2);
     Serial.println(" Hz");
     Serial.print("AHRS.sumCount: "); Serial.println(AHRS.sumCount);
-    Serial.print("AHRS.sum: "); Serial.println(AHRS.sum);
+    Serial.print("AHRS.sum: "); Serial.println(AHRS.sum);*/
 
     // Create Roll Pitch Yaw Message
     rpy_msg.header.frame_id = "/world";
@@ -101,7 +104,7 @@ void loop() {
     // Publish Roll, Pitch, Yaw message
     rpy.publish(&rpy_msg);
 
-    testROS();
+    // testROS();
     
     // Update Transmit Timer
     rosTransmitTimer = currentTime;

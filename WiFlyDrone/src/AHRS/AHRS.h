@@ -40,11 +40,11 @@
 
 
 // Pin definitions
-int myLed  = 33;  // Set up pin 13 led for toggling
+int myLed  = 4;  // Set up pin 13 led for toggling
 
 // Alternative I2C Definition
-#define SDA2 13// Bread Board: 13// 14
-#define SCL2 15// Bread Board: 14// 2
+#define SDA2 13// Bread Board: 13// 14 // PCB: 13
+#define SCL2 15// Bread Board: 14// 2  // PCB: 15
 TwoWire I2Ctwo = TwoWire(0);
 #define I2Cclock 400000
 #define MPU9250_ADDRESS MPU9250_ADDRESS_AD0   // Use either this line or the next to select which I2C address your device is using
@@ -61,7 +61,6 @@ void setupAHRS()
   while(!Serial){};
 
   pinMode(myLed, OUTPUT);
-  digitalWrite(myLed, HIGH);
 
 
   // Read the WHO_AM_I register, this is a good test of communication
@@ -93,7 +92,12 @@ void setupAHRS()
 
     // Calibrate gyro and accelerometers, load biases in bias registers
     Serial.println("About to Calibrate Accel and Gyro, do not move device for a moment.");
-    delay(3000);
+    for (int i=0; i< 12; i++){
+      digitalWrite(myLed, LOW);
+      delay(250);
+      digitalWrite(myLed, HIGH);
+      delay(250);
+    }
     Serial.println("Beginning Accel Gro Cal");
     AHRS.calibrateMPU9250(AHRS.gyroBias, AHRS.accelBias);
     Serial.println("Accel Gryo Cal Done!");
@@ -147,14 +151,19 @@ void setupAHRS()
     // Calibrate Magnetometer
     Serial.println("Beginning Mag Calibration in ");
     Serial.print("5 ");
+    digitalWrite(myLed, LOW );
     delay(1000);
     Serial.print("4 ");
+    digitalWrite(myLed, HIGH );
     delay(1000);
     Serial.print("3 ");
+    digitalWrite(myLed, LOW );
     delay(1000);
     Serial.print("2 ");
+    digitalWrite(myLed, HIGH );
     delay(1000);
     Serial.print("1 ");
+    digitalWrite(myLed, LOW );
     delay(1000);
     Serial.println("Mag val beginning, move in Figure 8 pattern");
     AHRS.magCalMPU9250(AHRS.magBias, AHRS.magScale);
@@ -168,6 +177,11 @@ void setupAHRS()
     Serial.println(AHRS.magScale[0]);
     Serial.println(AHRS.magScale[1]);
     Serial.println(AHRS.magScale[2]);
+
+    digitalWrite(myLed, HIGH );
+    delay(1000);
+    digitalWrite(myLed, LOW );
+    delay(1000);
     //    delay(2000); // Add delay to see results before serial spew of data
 
     if(SerialDebug)
