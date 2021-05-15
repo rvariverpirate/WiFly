@@ -58,7 +58,7 @@ void setup(){
   Serial.println("' to connect");
 
   // Setup Flight Controller
-  setupController(useThread);// Boolean indicates wther to use seperate thread or not
+  setupController(useThread);
 }
 
 void loop() {
@@ -67,6 +67,14 @@ void loop() {
 
   // If threaded solution is unstable use this instead
   if(!useThread){
+
+    // Update desired RPY values from ROS
+    roll.desired = commandVals_g.R;
+    pitch.desired = commandVals_g.P;
+    yaw.desired = commandVals_g.Y;
+    altitude.desired = commandVals_g.A;
+
+
     stabilizeDroneFusion_2();
   }
 

@@ -1,5 +1,6 @@
 #include <PID_v1.h>
 #include <pthread.h>
+#include "../Motors/Motors.h"
 #include "../AHRS/AHRS.h"
 
 struct PID_vals
@@ -104,11 +105,11 @@ void *stabilizeDroneFusion(void *threadId){
 
       // TODO: Add Yaw to equation
 
-      // Update PWM based on PID Outputs
-      double pwm_RF = (U_A - U_R - U_P);// Right Front Motor
-      double pwm_RB = (U_A - U_R + U_P);// Right Back Motor
-      double pwm_LB = (U_A + U_R + U_P);// Left Back Motor
-      double pwm_LF = (U_A + U_R - U_P);// Left Front Motor
+      // Update PWM based on PID Outputs (Clock-Wise from front right)
+      double pwm_A = (U_A - U_R - U_P);// Right Front Motor
+      double pwm_B = (U_A - U_R + U_P);// Right Back Motor
+      double pwm_C = (U_A + U_R + U_P);// Left Back Motor
+      double pwm_D = (U_A + U_R - U_P);// Left Front Motor
 
       /*Serial.println("ROLL:");
       Serial.print(String(roll.desired, DEC));
@@ -187,6 +188,9 @@ void setupController(bool useSeperateThread){
   pitch_PID.SetOutputLimits(0, 255);
   yaw_PID.SetOutputLimits(0, 255);
   altitude_PID.SetOutputLimits(0, 255);*/
+
+  // Setup motors and PWM
+  Motors motors();
 
   if(useSeperateThread){
     // Put Controller Stabilization in its own Thread

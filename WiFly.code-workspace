@@ -4,5 +4,12 @@
             "name": "WiFlyDrone",
             "path": "WiFlyDrone"
         }
-    ]
+    ],
+    "settings": {
+        "files.associations": {
+            "*.tcc": "cpp",
+            "functional": "cpp",
+            "ostream": "cpp"
+        }
+    }
 }
