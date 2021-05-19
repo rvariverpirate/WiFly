@@ -17,7 +17,7 @@ const char* password = MyNetwork.password;
 
 // Setup Timers to Replace Delays
 unsigned long rosTransmitTimer = millis();
-unsigned long rosTransmitPeriod = 100;// (ms)
+unsigned long rosTransmitPeriod = 200;// (ms)
 
 // Flag indicating Wether or not to Use Thread for Stabilization Loop
 bool useThread = false;
@@ -54,7 +54,7 @@ void setup(){
   startCameraServer();
   Serial.print("Camera Ready! Use 'http://");
   Serial.print(WiFi.localIP());
-  Serial.print("/stream");
+  Serial.print(":81/stream");
   Serial.println("' to connect");
 
   // Setup Flight Controller
