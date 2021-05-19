@@ -70,7 +70,7 @@ void setupAHRS()
   Serial.print(F(" I should be 0x"));
   Serial.println(0x71, HEX);
 
-  if (c == 0x73) // WHO_AM_I should always be 0x71: Why is mine always 0x73?
+  if (c == 0x71) // WHO_AM_I should always be 0x71: Why is mine always 0x73?
   {
     Serial.println(F("MPU9250 is online..."));
 

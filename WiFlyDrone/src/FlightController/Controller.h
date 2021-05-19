@@ -7,8 +7,8 @@ struct PID_vals
 {
 
   // Define The Gains
-  double kP = 20;
-  double kI = 1;
+  double kP = 15;
+  double kI = 0;
   double kD = 0;
 
   // Define the Setpoint, Input, and Output
@@ -32,6 +32,9 @@ PID altitude_PID(&altitude.measured, &altitude.U, &altitude.desired, altitude.kP
 
 // Create Global Time Delta
 float deltat;
+
+// Setup create Motors Object for PWM
+Motors motors = Motors();
 
 // Stabilize Drone: Caclualte PID's and Update PWM (keep in main loop for now)
 void stabilizeDroneFusion_2(){
@@ -63,6 +66,9 @@ void stabilizeDroneFusion_2(){
       double pwm_RB = (U_A - U_R + U_P);// Right Back Motor
       double pwm_LB = (U_A + U_R + U_P);// Left Back Motor
       double pwm_LF = (U_A + U_R - U_P);// Left Front Motor
+
+      // Send PWM Values to the Motor
+      motors.updateMotors(pwm_RF, pwm_RB, pwm_LB, pwm_LF);
 }
 
 
@@ -188,9 +194,6 @@ void setupController(bool useSeperateThread){
   pitch_PID.SetOutputLimits(0, 255);
   yaw_PID.SetOutputLimits(0, 255);
   altitude_PID.SetOutputLimits(0, 255);*/
-
-  // Setup motors and PWM
-  Motors motors();
 
   if(useSeperateThread){
     // Put Controller Stabilization in its own Thread

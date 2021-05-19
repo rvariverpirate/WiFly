@@ -36,7 +36,6 @@ void Motors::setupMotors()
 
 void Motors::updateMotors(double dutyCycleA, double dutyCycleB, double dutyCycleC, double dutyCycleD)
 {
-    Serial.println("TODO: assign correct PWM to each motor");
     ledcWrite(ChannelA, dutyCycleA);
     ledcWrite(ChannelB, dutyCycleB);
     ledcWrite(ChannelC, dutyCycleC);

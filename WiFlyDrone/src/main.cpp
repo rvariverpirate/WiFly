@@ -17,7 +17,7 @@ const char* password = MyNetwork.password;
 
 // Setup Timers to Replace Delays
 unsigned long rosTransmitTimer = millis();
-unsigned long rosTransmitPeriod = 50;// (ms)
+unsigned long rosTransmitPeriod = 100;// (ms)
 
 // Flag indicating Wether or not to Use Thread for Stabilization Loop
 bool useThread = false;
@@ -73,8 +73,8 @@ void loop() {
     pitch.desired = commandVals_g.P;
     yaw.desired = commandVals_g.Y;
     altitude.desired = commandVals_g.A;
-
-
+    
+    // Update the Stabilization Controller
     stabilizeDroneFusion_2();
   }
 
@@ -82,7 +82,7 @@ void loop() {
   // Note: Use non Thead Blocking timers instead of delay
   if(currentTime - rosTransmitTimer > rosTransmitPeriod) {
 
-    /*Serial.println("");
+    Serial.println("");
     Serial.println("From main loop...");
     Serial.print("Roll: ");
     Serial.print(roll.measured);
@@ -100,7 +100,7 @@ void loop() {
     Serial.print((float)AHRS.sumCount / AHRS.sum, 2);
     Serial.println(" Hz");
     Serial.print("AHRS.sumCount: "); Serial.println(AHRS.sumCount);
-    Serial.print("AHRS.sum: "); Serial.println(AHRS.sum);*/
+    Serial.print("AHRS.sum: "); Serial.println(AHRS.sum);
 
     // Create Roll Pitch Yaw Message
     rpy_msg.header.frame_id = "/world";
@@ -111,6 +111,7 @@ void loop() {
 
     // Publish Roll, Pitch, Yaw message
     rpy.publish(&rpy_msg);
+    nh.spinOnce();
 
     // testROS();
     
